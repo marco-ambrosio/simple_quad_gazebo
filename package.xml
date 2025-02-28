@@ -2,13 +2,13 @@
 <?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="3">
   <name>simple_quad</name>
-  <version>0.0.0</version>
+  <version>1.0.0</version>
   <description>TODO: Package description</description>
   <maintainer email="ricardo.azambuja@gmail.com">ros2user</maintainer>
   <license>TODO: License declaration</license>
 
   <buildtool_depend>ament_cmake</buildtool_depend>
-  
+
   <depend>camera_info_manager</depend>
   <depend>cv_bridge</depend>
   <depend>geometry_msgs</depend>
@@ -28,10 +28,8 @@
 
   <exec_depend>joint_state_publisher</exec_depend>
   <exec_depend>robot_state_publisher</exec_depend>
-  <exec_depend>robot_localization</exec_depend>
-  <exec_depend>rviz</exec_depend>
   <exec_depend>xacro</exec_depend>
-  
+
   <exec_depend>gazebo_dev</exec_depend>
   <exec_depend>gazebo_msgs</exec_depend>
   <exec_depend>gazebo_ros</exec_depend>
@@ -47,7 +45,7 @@
         GAZEBO_PLUGIN_PATH and GAZEBO_MODEL_PATH when you do this export inside
         the package.xml file. You can than use URIs of type model://my_package/stuff.
         https://answers.ros.org/question/375249/gazebo-model-plugin-for-ros2/ -->
-    <!-- <gazebo_ros                                                                 
-        gazebo_model_path="${prefix}" />  -->
+    <gazebo_ros gazebo_model_path="${prefix}" />
+    <gazebo_ros gazebo_plugin_path="${prefix}" />
   </export>
 </package>

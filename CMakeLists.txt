@@ -63,13 +63,8 @@ if(ENABLE_PROFILER)
 endif()
 
 
-install(DIRECTORY
-  world
-  DESTINATION share/${PROJECT_NAME}/
-)
-
 install(
-  DIRECTORY src launch rviz config world
+  DIRECTORY launch urdf
   DESTINATION share/${PROJECT_NAME}
 )
 

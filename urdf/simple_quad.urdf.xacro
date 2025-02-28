@@ -161,10 +161,6 @@
           <stddev>2e-4</stddev>
           <bias_mean>0.0000075</bias_mean>
           <bias_stddev>0.0000008</bias_stddev>
-          <!-- <mean>0.0</mean>
-          <stddev>0.0</stddev>
-          <bias_mean>0.0</bias_mean>
-          <bias_stddev>0.0</bias_stddev> -->
         </noise>
       </x>
       <y>
@@ -173,10 +169,6 @@
           <stddev>2e-4</stddev>
           <bias_mean>0.0000075</bias_mean>
           <bias_stddev>0.0000008</bias_stddev>
-          <!-- <mean>0.0</mean>
-          <stddev>0.0</stddev>
-          <bias_mean>0.0</bias_mean>
-          <bias_stddev>0.0</bias_stddev> -->
         </noise>
       </y>
       <z>
@@ -185,10 +177,6 @@
           <stddev>2e-4</stddev>
           <bias_mean>0.0000075</bias_mean>
           <bias_stddev>0.0000008</bias_stddev>
-          <!-- <mean>0.0</mean>
-          <stddev>0.0</stddev>
-          <bias_mean>0.0</bias_mean>
-          <bias_stddev>0.0</bias_stddev> -->
         </noise>
       </z>
     </angular_velocity>
@@ -199,10 +187,6 @@
           <stddev>1.7e-2</stddev>
           <bias_mean>0.1</bias_mean>
           <bias_stddev>0.001</bias_stddev>
-          <!-- <mean>0.0</mean>
-          <stddev>0.0</stddev>
-          <bias_mean>0.0</bias_mean>
-          <bias_stddev>0.0</bias_stddev> -->
         </noise>
       </x>
       <y>
@@ -211,10 +195,6 @@
           <stddev>1.7e-2</stddev>
           <bias_mean>0.1</bias_mean>
           <bias_stddev>0.001</bias_stddev>
-          <!-- <mean>0.0</mean>
-          <stddev>0.0</stddev>
-          <bias_mean>0.0</bias_mean>
-          <bias_stddev>0.0</bias_stddev> -->
         </noise>
       </y>
       <z>
@@ -223,10 +203,6 @@
           <stddev>1.7e-2</stddev>
           <bias_mean>0.1</bias_mean>
           <bias_stddev>0.001</bias_stddev>
-          <!-- <mean>0.0</mean>
-          <stddev>0.0</stddev>
-          <bias_mean>0.0</bias_mean>
-          <bias_stddev>0.0</bias_stddev> -->
         </noise>
       </z>
     </linear_acceleration>
@@ -234,7 +210,7 @@
 </sensor>
 </gazebo>
 
-<link name="lidar_link">
+<!-- <link name="lidar_link">
   <inertial>
     <origin xyz="0 0 0" rpy="0 0 0"/>
     <mass value="0.125"/>
@@ -260,12 +236,12 @@
   <parent link="base_link"/>
   <child link="lidar_link"/>
   <origin xyz="0 0 ${base_height}" rpy="0 0 0"/>
-</joint>
+</joint> -->
 
-<gazebo reference="lidar_link">
-  <sensor name="lidar" type="ray">
+<!-- <gazebo reference="lidar_link">
+  <sensor name="lidar" type="gpu_ray">
     <always_on>true</always_on>
-    <visualize>true</visualize>
+    <visualize>false</visualize>
     <update_rate>5</update_rate>
     <ray>
       <scan>
@@ -296,7 +272,7 @@
       <frame_name>lidar_link</frame_name>
     </plugin>
   </sensor>
-</gazebo>
+</gazebo> -->
 
 <link name="camera_link">
   <visual>
@@ -404,7 +380,7 @@
     <!-- Odometry output -->
     <update_rate>50</update_rate>
     <publish_odom>true</publish_odom>
-    <publish_odom_tf>false</publish_odom_tf>
+    <publish_odom_tf>true</publish_odom_tf>
 
     <cmd_vel_topic>/cmd_vel</cmd_vel_topic>
     <cmd_pos_topic>/cmd_pos</cmd_pos_topic>

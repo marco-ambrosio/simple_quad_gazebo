@@ -65,7 +65,7 @@
 #include <ignition/common/Profiler.hh>
 #endif
 
-#include <tf2_geometry_msgs/tf2_geometry_msgs.h>
+#include <tf2_geometry_msgs/tf2_geometry_msgs.hpp>
 #include <tf2_ros/transform_broadcaster.h>
 
 #include <memory>
@@ -205,7 +205,7 @@ void GazeboRosSimpleQuad::Load(gazebo::physics::ModelPtr _model, sdf::ElementPtr
   impl_->model_ = _model;
   
   // Initialize ROS node
-  impl_->ros_node_ = gazebo_ros::Node::Get(_sdf, _model);
+  impl_->ros_node_ = gazebo_ros::Node::Get(_sdf, _model.get()->GetName());
 
   // Get QoS profiles
   const gazebo_ros::QoS & qos = impl_->ros_node_->get_qos();
