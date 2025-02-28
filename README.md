@@ -1,5 +1,5 @@
 # simple_quad_gazebo
-Very simple quadcopter for Gazebo using ROS2 Humble and later. It's just a very cheap and dirty adaptation of a pre-existent Gazebo plugin called "hand of god", but now it looks like a quadcopter and you can send velocity commands too. In addition to that, it makes the quad **look** a little bit more realistic by **faking** the pitch and roll angles according to the acceleration. All settings are easy to understand, just check the [simple_quad.urdf](src/simple_quad/src/description/simple_quad.urdf).     
+Very simple quadcopter for Gazebo using ROS2 Humble and later. It's just a very cheap and dirty adaptation of a pre-existent Gazebo plugin called "hand of god", but now it looks like a quadcopter and you can send velocity commands too. In addition to that, it makes the quad **look** a little bit more realistic by **faking** the pitch and roll angles according to the acceleration. All settings are easy to understand, just check the [simple_quad.urdf](urdf/simple_quad.urdf.xacro).     
 I wrote this because I wanted something faster than the quad plugins available for Gazebo, but I wrote the code without worrying about writing an optimized code and I never tested it against anything to confirm it's really faster than those plugins... LOL.
 
 ```
